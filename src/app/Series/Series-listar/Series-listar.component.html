@@ -1,0 +1,30 @@
+<div class="row mt-4">
+  <div class="col-1">
+  </div>
+  <div class="col-4">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Channel</th>
+          <th scope="col">Seasons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background-color:#F2F3F2" *ngFor="let serie of series" (click)="onSelect(serie)">
+          <th scope="row">{{serie.id}}</th>
+          <td style="color:blue">{{serie.name}}</td>
+          <td>{{serie.channel}}</td>
+          <td>{{serie.seasons}}</td>
+        </tr>
+        <tr colspan="4">
+          <th scope="row" colspan="4">Season Avarage: {{promedioTemporadas}}</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-4 ml-4" *ngIf="select">
+    <app-series-detail [serie]="selectSerie"></app-series-detail>
+  </div>
+</div>
